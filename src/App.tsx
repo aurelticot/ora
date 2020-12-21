@@ -25,9 +25,21 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
   },
   displayContainer: {
+    flexGrow: 1,
     width: "100%",
     height: "100vh",
     position: "relative",
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  displayContainerShift: {
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: `${-drawerWidth}px`,
   },
   drawerButton: {
     position: "absolute",
@@ -58,7 +70,11 @@ export const App: React.FunctionComponent = () => {
         >
           <ControlsSection className={classes.controlSection} />
         </Drawer>
-        <Box className={classes.displayContainer}>
+        <Box
+          className={`${classes.displayContainer} ${
+            drawerOpen ? "" : classes.displayContainerShift
+          }`}
+        >
           <DisplaySection />
           <Fab
             color="default"
