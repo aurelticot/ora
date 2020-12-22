@@ -1,6 +1,12 @@
 # ora
 
-Experimentation on Genetic Algorithm to simulate an ecosystem adapting to its environment
+Experimentation on Genetic Algorithm to simulate an ecosystem adapting to its environment.
+
+I was interested by building a Evolutionary Algorithm on my own for training purpose and chose a life simulation reacting to the environment conditions (temperature, humidity, etc. even though only temperature is implemented at the moment). The simulation doesn't end on a success criteria but loop endlessly as the conditions can also change at the same time.
+
+After the algo part, I built a front end to control and visualise it. For simplicity the algo then runs in the browser.
+
+![ora UI screenshot](ora-UI-screenshot.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
