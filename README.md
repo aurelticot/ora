@@ -2,11 +2,28 @@
 
 Experimentation on Genetic Algorithm to simulate an ecosystem adapting to its environment.
 
-I was interested by building a Evolutionary Algorithm on my own for training purpose and chose a life simulation reacting to the environment conditions (temperature, humidity, etc. even though only temperature is implemented at the moment). The simulation doesn't end on a success criteria but loop endlessly as the conditions can also change at the same time.
+I was interested in building an Evolutionary Algorithm on my own for training purpose and chose a life simulation reacting to the environment conditions (temperature, humidity, etc. even though only temperature is implemented at the moment). The simulation doesn't stop on a success criteria but loop endlessly as the conditions are changing at the same time.
 
-After the algo part, I built a front end to control and visualise it. For simplicity the algo then runs in the browser.
+After the algo part, I built a front end to test it by controling the configuration and conditions, and visualise the population. For simplicity the algo runs in the browser.
+Changing the configuration and conditions doesn't reset the simulation.
 
-![ora UI screenshot](ora-UI-screenshot.png)
+![ora UI animation](ora.gif)
+
+At the moment, only the temperature is taken into consideration.
+Blue individuals have a temperature sensitivity below 18 degree Celsius.
+Green individuals have a temperature sensitivity between 18 and 25 degree Celsius.
+Red individuals have a temperature sensitivity above 25 degree Celsius.
+
+As the simulation runs, the individuals' sensitivity evolves towards the actual conditions changing the individual colour. This is ensured by the selection, crossover and mutation parts of the algorithm.
+
+The population stabilized at 15 degree Celsius
+![Population stabilized at 15 degree Celsius](ora-15.png)
+
+The population stabilized at 21 degree Celsius
+![Population stabilized at 21 degree Celsius](ora-21.png)
+
+The population stabilized at 28 degree Celsius
+![Population stabilized at 28 degree Celsius](ora-28.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
